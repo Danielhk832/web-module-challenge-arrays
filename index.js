@@ -150,10 +150,6 @@ function removeFlavorByName(array, removal){
    return array;
 }
 
-console.log('task 6', removeFlavorByName(originalFlavors, 'Rocky Road'));
-console.log(originalFlavors.length);
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
@@ -201,9 +197,24 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
-}
+function getAverageWordLength(array){
+  let splitArray = [];
+  for(let i = 0; i < array.length; i++){
+  splitArray.push(array[i].split(' '));
+  }
+  
+  let sum;
+  let average;
+  for (let j = 0; j < splitArray.length; j++){
+    if (j === 0){
+      sum = splitArray[j].length;
+    } else {
+      sum = sum + splitArray[j].length;
+    }
+  }
+  average = sum / originalFlavors.length;
+  return average;
+  }
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
